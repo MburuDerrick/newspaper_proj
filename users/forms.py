@@ -1,0 +1,23 @@
+from django import forms
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+
+from .models import CustomUser
+
+class CustomUserCreationForm(UserCreationForm):
+
+    class Meta(UserCreationForm):
+        model = CustomUser
+        fields = UserCreationForm.Meta.fields+('age',)
+
+
+class CustomUserChangeForm(UserChangeForm):
+    class Meta:
+        model= CustomUser
+        fields = UserChangeForm.Meta.fields
+
+class SubscriptionForm(forms.Form):
+    PLAN_CHOICES = [
+        ('Basic', 'Basic - $10/month'),
+        ('Premium', 'Premium - $100/year'),
+    ]
+    plan = forms.ChoiceField(choices=PLAN_CHOICES, widget=forms.RadioSelect)

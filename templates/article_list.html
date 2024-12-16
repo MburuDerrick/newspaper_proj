@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Articles{% endblock title %}
+
+{% block content %}
+<h1 class="mb-4">Articles</h1>
+<div class="row">
+    {% for article in object_list %}
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">{{ article.title }}</h5>
+                <small>by <strong>{{ article.author }}</strong> on {{ article.date }}</small>
+            </div>
+            <div class="card-body">
+                <p class="card-text text-truncate">{{ article.body }}</p>
+                <a href="{% url 'article_detail' article.pk %}" class="btn btn-sm btn-outline-primary">Read More</a>
+                <br>
+                <div class="d-flex justify-content-between">
+                    
+                    <a href="{% url 'article_edit' article.pk %}" class="btn btn-sm btn-outline-primary">Edit</a>
+                    <a href="{% url 'article_delete' article.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                </div>
+            </div>
+            <div class="card-footer">
+                <h6>Comments:</h6>
+                {% for comment in article.comments.all %}
+                <p class="border rounded p-2">
+                    <span class="badge bg-secondary">{{ comment.author }}</span>
+                    {{ comment }}
+                </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No articles found.</p>
+    {% endfor %}
+</div>
+{% endblock content %}

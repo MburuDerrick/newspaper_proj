@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Subscription Successful{% endblock title %}
+
+{% block content %}
+<div class="container mt-4 text-center">
+    <h2>Thank you for subscribing!</h2>
+    <p>Your subscription is now active. Enjoy the benefits of your chosen plan.</p>
+    <a href="{% url 'subscription_details' %}" class="btn btn-primary">View Subscription Details</a>
+</div>
+{% endblock content %}

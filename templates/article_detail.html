@@ -1,0 +1,31 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}{{ article.title }}{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h2>{{ article.title }}</h2>
+            <small>by <strong>{{ article.author }}</strong> on {{ article.date }}</small>
+        </div>
+        <div class="card-body">
+            <p>{{ article.body }}</p>
+        </div>
+        <div class="card-footer">
+            <h6>Comments:</h6>
+            {% for comment in article.comments.all %}
+            <p class="border rounded p-2">
+                <span class="badge bg-secondary">{{ comment.author }}</span>
+                {{ comment }}
+            </p>
+            {% empty %}
+            <p>No comments yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="{% url 'article_list' %}" class="btn btn-outline-secondary mt-3">Back to Articles</a>
+</div>
+{% endblock content %}
