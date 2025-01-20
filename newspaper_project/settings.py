@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-j%ch)tq$&a^)q62==(5@3ug=o1pvxus&)mx@1a+b(21(eq#saa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["ff3d-102-167-236-16.ngrok-free.app",
+ALLOWED_HOSTS = ["ed89-102-0-3-228.ngrok-free.app",
 "127.0.0.1",]
 
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'articles.apps.ArticlesConfig',
     'mpesa_integration.apps.MpesaIntegrationConfig',
+    'basketball',
 ]
 
 MIDDLEWARE = [
@@ -125,13 +126,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
 
-# The directory where static files are stored
+STATIC_URL = '/static/'  # URL to access static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Where static files are collected
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # This is where your static files will be placed
+    os.path.join(BASE_DIR, 'static'),  # Where your app's static files are stored
 ]
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -168,5 +168,11 @@ MPESA_PARTYB = "600000"  # Use 600000 for the sandbox
 MPESA_PHONE_NUMBER = "254708374149"  # Test phone number
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://ff3d-102-167-236-16.ngrok-free.app',  # Add your ngrok URL here
+    "https://ed89-102-0-3-228.ngrok-free.app",  # Add your current ngrok domain
 ]
+
+# balldontlie Basketball API
+BALLDONTLIE_API_BASE = "https://www.balldontlie.io/api/v1/"
+OPENWEATHERMAP_API_KEY = '359da69392446350d4f3c756bdce0e43'
+
+

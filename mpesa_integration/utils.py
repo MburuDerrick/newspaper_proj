@@ -35,8 +35,8 @@ def register_urls(request):
     payload = {
         "ShortCode": settings.MPESA_PAYBILL,
         "ResponseType": "Completed",
-        "ConfirmationURL": "https://ff3d-102-167-236-16.ngrok-free.app/mpesa/confirmation/",
-        "ValidationURL": "https://ff3d-102-167-236-16.ngrok-free.app/mpesa/validation/",
+        "ConfirmationURL": "https://ed89-102-0-3-228.ngrok-free.app/mpesa/confirmation/",
+        "ValidationURL": "https://ed89-102-0-3-228.ngrok-free.app/mpesa/validation/",
         #"ConfirmationURL": request.build_absolute_uri(reverse('mpesa_confirmation')),
         #"ValidationURL": request.build_absolute_uri(reverse('mpesa_validation')),
     }
@@ -98,7 +98,7 @@ def lipa_na_mpesa_online(phone_number, amount):
             "PartyA": phone_number,
             "PartyB": settings.MPESA_SHORTCODE,
             "PhoneNumber": phone_number,
-            "CallBackURL": "https://ff3d-102-167-236-16.ngrok-free.app/mpesa/confirmation/",
+            "CallBackURL": "https://ed89-102-0-3-228.ngrok-free.app/mpesa/confirmation/",
             "AccountReference": "SUB123",
             "TransactionDesc": "Payment for subscription"
         }

@@ -1,20 +1,570 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
-{% block title %} Home {% endblock title %}
-
+{% block title %}Home{% endblock title %}
+{% load static %}
 
 {% block content %}
-<div class="jumbotron">
-    <h1 class="display-4">Newspaper app</h1>
-    <p class="lead">A Newspaper website built with Django.</p>
-    <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
-    role="button">View All Articles</a>
-   
-    </p>
+<!-- Main Content Section -->
+<div class="container mt-4">
+    
+    <!-- Hero Section -->
+    
+        <!-- Top News Start-->
+        <div class="top-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 tn-left">
+                        <div class="row tn-slider">
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="/static/images/news-450x350-1.jpg" />
+                                    <div class="tn-title">
+                                        <a href="{%url 'article_detail' pk=7 %}">Jedidah, dreams of Germany some day</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="/static/images/rutoICC.jpg" />
+                                    <div class="tn-title">
+                                        <a href="{% url 'article_detail' pk=2 %}">Ruto Must Go!</a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="/static/images/genz.jpg" />
+                                    <div class="tn-title">
+                                        <a href="{% url 'article_detail' pk=2 %}">Genz Protest Kenya</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="/static/images/news-450x350-2.jpg" />
+                                    <div class="tn-title">
+                                        <a href="{% url 'article_detail' pk=8 %}">Relax, Meditate</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 tn-right">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="/static/images/news-350x223-1.jpg" />
+                                    <div class="tn-title">
+                                        <a href="">Social Media?</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="/static/images/news-350x223-2.jpg" />
+                                    <div class="tn-title">
+                                        <a href="">Yoga</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="/static/images/news-350x223-3.jpg" />
+                                    <div class="tn-title">
+                                        <a href="">Kids play</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="/static/images/news-350x223-4.jpg" />
+                                    <div class="tn-title">
+                                        <a href="">News Briefs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Top News End-->
+
+        <!-- Category News Start-->
+        <div class="cat-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Sports</h2>
+                        <div class="row cn-slider">
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="static/images/news-350x223-1.jpg" />
+                                    <div class="cn-title">
+                                        <a href="">Gymnastics</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="static/images/news-350x223-2.jpg" />
+                                    <div class="cn-title">
+                                        <a href="">Yoga</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="static/images/news-350x223-3.jpg" />
+                                    <div class="cn-title">
+                                        <a href="">Morning runs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Technology</h2>
+                        <div class="row cn-slider">
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="static/images/news-350x223-4.jpg" />
+                                    <div class="cn-title">
+                                        <a href="">AI tech</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="static/images/news-350x223-5.jpg" />
+                                    <div class="cn-title">
+                                        <a href="">Web 3 Seminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="static/images/news-350x223-1.jpg" />
+                                    <div class="cn-title">
+                                        <a href="">Blockchain</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Category News End-->
+
+
+
+<!-- Tab News Start-->
+<div class="tab-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#featured">Featured News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#popular">Popular News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="featured" class="container tab-pane active">
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-1.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">AI tech</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-2.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Look Ahead</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-3.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Focusing Away</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="popular" class="container tab-pane fade">
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-4.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Looks and Ups</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-5.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">I believe</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-1.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Hello!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="latest" class="container tab-pane fade">
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-2.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Heyy!</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-3.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Quality</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-4.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorent</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#m-viewed">Most Viewed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#m-read">Most Read</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#m-recent">Most Recent</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="m-viewed" class="container tab-pane active">
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-5.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-4.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-3.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="m-read" class="container tab-pane fade">
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-2.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-1.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-3.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="m-recent" class="container tab-pane fade">
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-4.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-5.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="static/images/news-350x223-1.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Tab News Start-->
+
+<!-- Main News Start-->
+<div class="main-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mn-img">
+                            <img src="static/images/news-350x223-1.jpg" />
+                            <div class="mn-title">
+                                <a href="">Lifestyle:</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mn-img">
+                            <img src="static/images/news-350x223-2.jpg" />
+                            <div class="mn-title">
+                                <a href="">Flowery</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mn-img">
+                            <img src="static/images/news-350x223-3.jpg" />
+                            <div class="mn-title">
+                                <a href="">Work outs</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mn-img">
+                            <img src="static/images/news-350x223-4.jpg" />
+                            <div class="mn-title">
+                                <a href="">LG</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mn-img">
+                            <img src="static/images/news-350x223-5.jpg" />
+                            <div class="mn-title">
+                                <a href="">Samsung</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mn-img">
+                            <img src="static/images/news-350x223-1.jpg" />
+                            <div class="mn-title">
+                                <a href="">Lorem ipsum dolor sit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mn-img">
+                            <img src="static/images/news-350x223-2.jpg" />
+                            <div class="mn-title">
+                                <a href="">Glamor</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mn-img">
+                            <img src="static/images/news-350x223-3.jpg" />
+                            <div class="mn-title">
+                                <a href="">Lorem ipsum dolor sit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mn-img">
+                            <img src="static/images/news-350x223-4.jpg" />
+                            <div class="mn-title">
+                                <a href="">Sports Highlights</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="mn-list">
+                    <h2>Read More</h2>
+                    <ul>
+                        <li><a href="">Breaking News: Major Event Unfolds</a></li>
+                        <li><a href="">New Study Reveals Surprising Findings</a></li>
+                        <li><a href="">Experts Weigh In on Global Economic Outlook</a></li>
+                        <li><a href="">Sports Highlights: Latest Scores and Updates</a></li>
+                        <li><a href="">Local Community Pushes for Environmental Change</a></li>
+                        <li><a href="">Government Announces New Policies for 2025</a></li>
+                        <li><a href="">Lifestyle: Tips for a Healthier Lifestyle</a></li>
+                        <li><a href="">Business Trends: What to Expect in the Coming Year</a></li>
+                        <li><a href="">Technology: Breakthrough Innovations Shaping the Future</a></li>
+                        <li><a href="">Entertainment: Upcoming Movies and Events</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main News End-->
+<div class="row">
+    <h2>Live Events</h2>
+    <div class="col-lg-6">
+        <!-- Weather Section Card -->
+        <div class="card mb-4">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0">Weather</h5>
+            </div>
+            <div class="card-body">
+                <!-- Form to select city, inside the card -->
+                <form method="GET" action="/" class="weather-form">
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-danger w-100">Get Weather</button>
+                </form>
+
+                <!-- Weather info displayed after form submission -->
+                <div class="weather-info mt-4">
+                    <h6 class="card-title">Weather in {{ city }}</h6>
+                    {% if weather %}
+                        <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
+                        <p><strong>Description:</strong> {{ weather.description }}</p>
+                        <p><strong>Humidity:</strong> {{ weather.humidity }}%</p>
+                        <p><strong>Wind Speed:</strong> {{ weather.wind_speed }} m/s</p>
+                    {% else %}
+                        <p>Weather data not available.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div class="col-lg-6">
+        <!-- Basketball Scores Section -->
+        
+        <h3>Basketball Scores</h3>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Team A vs Team B</h5>
+                <p class="card-text">Score: 102 - 98</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Team C vs Team D</h5>
+                <p class="card-text">Score: 120 - 110</p>
+                <p class="card-text"><small class="text-muted">Last updated 15 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+</div>
 
+      
+            
 
+    <!-- Carousel Section -->
+    <div id="carouselExampleIndicators" class="carousel slide mx-auto mt-4" data-bs-ride="carousel" style="max-width: 100%; overflow: hidden;">
+        <div class="carousel-inner">
+            <!-- First Carousel Item -->
+            <div class="carousel-item active">
+                <img src="{% static 'images/nnn.jpg' %}" class="d-block w-100 carousel-image" alt="News 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Number 1 News Channel</h5>
+                    <p>Short description of the news...</p>
+                    <a href="{% url 'article_detail' pk=3 %}" class="btn btn-light">Read More</a>
+                </div>
+            </div>
 
-{%endblock content%}
+            <!-- Second Carousel Item -->
+            <div class="carousel-item">
+                <img src="{% static 'images/rutoICC.jpg' %}" class="d-block w-100 carousel-image" alt="News 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Ruto Must Go...</h5>
+                    <p>Description for the second news...</p>
+                    <a href="{% url 'article_detail' pk=2 %}" class="btn btn-light">Read More</a>
+                </div>
+            </div>
+
+            <!-- Third Carousel Item -->
+            <div class="carousel-item">
+                <img src="{% static 'images/lebron.jpg' %}" class="d-block w-100 carousel-image" alt="News 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Lebron Makes Hits</h5>
+                    <p>Description for the third news...</p>
+                    <a href="{% url 'article_detail' pk=6 %}" class="btn btn-light">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
+
+    
+{% endblock content %}
